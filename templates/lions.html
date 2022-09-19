@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="text-center my-3">Lions</h1>
+
+<div class="row">
+    {% for hline, link, image, tstamp, team in article_list %}
+    {% if team == 'Lions' %}
+    <div class="card mx-2 my-2" style="width: 14rem;">
+        <img src={{image}} class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{hline}}</h5>
+            <p class="card-text">By</p>
+            <p class="card-text">{{team}}</p>
+            <p class="card-text">{{tstamp}}</p>
+            <a href="{{link}}" target="_blank" class="btn" style="background-color: #006CAF; color: silver">Read Article</a>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+
+
+{% endblock content %}
